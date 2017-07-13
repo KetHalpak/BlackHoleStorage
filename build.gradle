@@ -71,8 +71,14 @@ task deobfJar(type: Jar) {
     classifier = 'deobf'
 }
 
+task srcJar(type: Jar, dependsOn: classes) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
 artifacts {
     archives deobfJar
+	archives srcJar
 }
 
 curseforge {
@@ -88,6 +94,9 @@ curseforge {
 		}
 		addArtifact(deobfJar) {
 		  displayName = "[${config.minecraft_version}] Black Hole Storage (Deobfuscated) - ${config.mod_version}"
+		}
+		addArtifact(srcJar) {
+		  displayName = "[${config.minecraft_version}] Hammer Core (Sources) - ${config.mod_version}"
 		}
 		relations {
             requiredLibrary 'Hammer-Core'
