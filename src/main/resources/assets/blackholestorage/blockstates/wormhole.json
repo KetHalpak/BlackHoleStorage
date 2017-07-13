@@ -1,0 +1,17 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"custom": { "flip-v": true },
+		"model": "blackholestorage:wormhole.obj"
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": [{ "transform": "forge:default-block", "x": 90 } ],
+		"facing=south": { "model": "blackholestorage:wormhole.obj", "custom": { "flip-v": true }, "y": 180, "x": 90 },
+		"facing=west": { "model": "blackholestorage:wormhole.obj", "custom": { "flip-v": true }, "y": 270, "x": 90 },
+		"facing=east":  { "model": "blackholestorage:wormhole.obj", "custom": { "flip-v": true }, "y": 90, "x": 90 },
+		"facing=north":  { "model": "blackholestorage:wormhole.obj", "custom": { "flip-v": true }, "y": 0, "x": 90 },
+		"facing=up":  { "model": "blackholestorage:wormhole.obj", "custom": { "flip-v": true } },
+		"facing=down":  { "model": "blackholestorage:wormhole.obj", "custom": { "flip-v": true }, "x": 180 }
+	}
+}

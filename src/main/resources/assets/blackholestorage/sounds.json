@@ -1,0 +1,7 @@
+{
+    "black_hole_loop" : {"category": "block", "sounds": ["blackholestorage:black_hole_loop"] },
+	"black_hole_implode" : {"category": "block", "sounds": ["blackholestorage:black_hole_implode"] },
+	"black_hole_form" : {"category": "block", "sounds": ["blackholestorage:black_hole_form"] },
+	"crafted" : {"category": "block", "sounds": ["blackholestorage:crafted"] },
+	"crafting" : {"category": "block", "sounds": ["blackholestorage:crafting1","blackholestorage:crafting2","blackholestorage:crafting3","blackholestorage:crafting4"] }
+}

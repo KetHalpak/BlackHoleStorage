@@ -1,0 +1,13 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "blackholestorage:former_ring"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ " i ", "idi", " i " ],
+    "key": {
+		"i": { "ore": "blockIron", "type": "forge:ore_dict" },
+		"d": { "item": "blackholestorage:dark_matter" }
+    },
+    "result": { "item": "blackholestorage:former_ring" }
+}

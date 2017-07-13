@@ -1,0 +1,14 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "blackholestorage:wormholepearl"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "pep", "eme", "pep" ],
+    "key": {
+		"m": { "ore": "matterAnti", "type": "forge:ore_dict" },
+		"p": { "ore": "gemPrismarine", "type": "forge:ore_dict" },
+		"e": { "ore": "enderpearl", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "blackholestorage:wormholepearl" }
+}

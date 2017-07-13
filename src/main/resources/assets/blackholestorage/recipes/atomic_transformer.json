@@ -1,0 +1,14 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "blackholestorage:atomic_transformer"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "ooo", "dgd", "ooo" ],
+    "key": {
+		"o": { "ore": "obsidian", "type": "forge:ore_dict" },
+		"d": { "ore": "blockDiamond", "type": "forge:ore_dict" },
+		"g": { "ore": "blockGlass", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "blackholestorage:atomic_transformer" }
+}

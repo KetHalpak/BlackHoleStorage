@@ -1,0 +1,10 @@
+[
+	{
+		"modid": "blackholestorage",
+		"name": "Black Hole Storage",
+		"description": "Store infinite amounts of something inside of a stabilized black holes.",
+		"url": "",
+		"authorList": ["APengu"],
+		"logo": "assets/blackholestorage/textures/logo.png"
+	}
+]

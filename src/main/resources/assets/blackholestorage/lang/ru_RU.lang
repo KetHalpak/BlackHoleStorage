@@ -1,0 +1,69 @@
+﻿
+itemGroup.blackholestorage=Black Hole Storage
+jei.blackholestorage:atomic_transformer=Атомический трансформатор
+jei.blackholestorage.desc:knowledge_tome=Примените "Пергамент знаний пространства и времени" на книжной полке и затем подождите примерно 10 секунд.
+
+###BLOCKS###
+
+tile.blackholestorage:wormhole.name=Блок червоточины
+tile.blackholestorage:wormhole.tooltip0=Уничтожьте пространство и время!
+
+tile.blackholestorage:black_hole.name=Черная дыра
+tile.blackholestorage:black_hole.tooltip0=Выглядит неполучаемым
+
+tile.blackholestorage:black_hole_former.name=Формировщик черной дыры
+tile.blackholestorage:black_hole_former.tooltip0=Адронный Коллайдер сошел с ума!
+
+tile.blackholestorage:black_hole_stabilizer.name=Стабилизатор черной дыры
+tile.blackholestorage:black_hole_stabilizer.tooltip0=Установите 4 стабилизатора направленных на черную дыру
+tile.blackholestorage:black_hole_stabilizer.tooltip1=И подайте электричество с противоположной стороны, чтобы использовать
+tile.blackholestorage:black_hole_stabilizer.tooltip2=Вашу черную дыру без катастроф
+tile.blackholestorage:black_hole_stabilizer.tooltip3=Использует 100 RF/t пока активен.
+
+tile.blackholestorage:fluid_ejector.name=Выталкиватель: Жидкость
+tile.blackholestorage:fluid_injector.name=Вводитель: Жидкость
+tile.blackholestorage:rf_ejector.name=Выталкиватель: RF
+tile.blackholestorage:rf_injector.name=Выталкиватель: RF
+tile.blackholestorage:atomic_transformer.name=Атомический трансформатор
+
+tile.blackholestorage:wormhole_former.name=Формировщик червоточины
+tile.blackholestorage:wormhole_former.tooltip0=Связывает две точки в пространстве
+tile.blackholestorage:wormhole_former.tooltip1=Используйте жемчуги червоточины на обеих кольцах
+tile.blackholestorage:wormhole_former.tooltip2=И подайте 2,480,000,000 RF/FE
+
+############
+
+###ITEMS###
+
+item.blackholestorage:dark_matter.name=Тёмная материя
+item.blackholestorage:dark_matter.tooltip0=Выглядит плотным и тяжелым!
+
+item.blackholestorage:anti_matter.name=Анти-материя
+item.blackholestorage:anti_matter.tooltip0=Киньте в черную дыру, что бы её уничтожить.
+item.blackholestorage:anti_matter.tooltip1=Возможен взрывной побочный эффект...
+
+item.blackholestorage:former_ring.name=Кольцо формирования черной дыры
+item.blackholestorage:former_ring.tooltip0=Мини Адронный Коллайдер
+
+item.blackholestorage:wormholepearl.name=Жемчужина червоточины
+item.blackholestorage:wormholepearl.tooltip0=Исользуется для отметки точки,
+item.blackholestorage:wormholepearl.tooltip1=в пространстве - не времени!
+
+item.blackholestorage:knowledge_tome.name=Том знаний пространства и времени
+item.blackholestorage:knowledge_parchment.name=Пергамент знаний пространства и времени
+
+###########
+
+###GUI###
+
+gui.blackholestorage:rf.required=Требуемая энергия
+gui.blackholestorage:rf.stored=Накоплено
+gui.blackholestorage:input=Вход
+gui.blackholestorage:output=Выход
+gui.blackholestorage:progress=Прогресс
+
+#########
+
+###DEATHS###
+death.attack.blackholestorage:black_hole=%s пересек Горизонт Событий
+############

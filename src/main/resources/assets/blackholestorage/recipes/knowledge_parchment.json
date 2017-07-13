@@ -1,0 +1,14 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "blackholestorage:knowledge_parchment"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "ppp", "lil" ],
+    "key": {
+		"i": { "ore": "ingotIron", "type": "forge:ore_dict" },
+		"p": { "item": "minecraft:paper" },
+		"l": { "item": "minecraft:leather" }
+    },
+    "result": { "item": "blackholestorage:knowledge_parchment" }
+}

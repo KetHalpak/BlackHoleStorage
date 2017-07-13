@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "custom": { "flip-v": true },
+    "model": "blackholestorage:atomic_transformer.obj",
+    "textures": {}
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{ "transform": "forge:default-block" }]
+  }
+}

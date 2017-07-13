@@ -1,0 +1,13 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"custom": { "flip-v": true },
+		"model": "blackholestorage:fluid_injector.obj"
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": [{ "transform": "forge:default-block" }],
+		"facing=up": { "model": "blackholestorage:fluid_injector.obj", "custom": { "flip-v": true } },
+		"facing=down": { "model": "blackholestorage:fluid_injector.obj", "custom": { "flip-v": true }, "x": 180 }
+	}
+}

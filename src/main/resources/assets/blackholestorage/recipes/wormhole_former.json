@@ -1,0 +1,13 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "blackholestorage:wormhole_former"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "r", "m", "r" ],
+    "key": {
+		"m": { "ore": "matterDark", "type": "forge:ore_dict" },
+		"r": { "item": "blackholestorage:former_ring" }
+    },
+    "result": { "item": "blackholestorage:wormhole_former" }
+}

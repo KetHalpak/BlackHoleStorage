@@ -1,0 +1,15 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "blackholestorage:black_hole_former"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "sss", "drd", "iii" ],
+    "key": {
+		"i": { "ore": "ingotIron", "type": "forge:ore_dict" },
+		"d": { "ore": "gemDiamond", "type": "forge:ore_dict" },
+		"s": { "ore": "dustRedstone", "type": "forge:ore_dict" },
+		"r": { "item": "blackholestorage:former_ring" }
+    },
+    "result": { "item": "blackholestorage:black_hole_former" }
+}
