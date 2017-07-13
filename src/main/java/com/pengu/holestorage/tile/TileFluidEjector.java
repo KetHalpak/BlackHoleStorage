@@ -97,9 +97,9 @@ public class TileFluidEjector extends TileSyncableTickable implements IFluidHand
 				scan = null;
 			
 			if(scan != null && isBlackHoleFound() && fxgreen)
-				HammerCore.particleProxy.spawnZap(world, new Vec3d(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5), new Vec3d(scan.getX() + .5, scan.getY() + .5, scan.getZ() + .5), Color.GREEN);
+				HammerCore.particleProxy.spawnZap(world, new Vec3d(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5), new Vec3d(scan.getX() + .5, scan.getY() + .5, scan.getZ() + .5), Color.GREEN.getRGB());
 			else if(yellow && fxyellow)
-				HammerCore.particleProxy.spawnZap(world, new Vec3d(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5), new Vec3d(s.getX() + .5, s.getY() + .5, s.getZ() + .5), Color.YELLOW);
+				HammerCore.particleProxy.spawnZap(world, new Vec3d(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5), new Vec3d(s.getX() + .5, s.getY() + .5, s.getZ() + .5), Color.YELLOW.getRGB());
 		}
 	}
 	

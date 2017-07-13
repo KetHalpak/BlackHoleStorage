@@ -65,7 +65,7 @@ public class TileBlackHoleStabilizer extends TileSyncableTickable implements IEn
 					
 					BlackHoleStorage.proxy.spawnLiquidFX(world, pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5, scan.getX() + .5, scan.getY() + .5, scan.getZ() + .5, 200, (red << 16) | (green << 8) | blue, .1F, 3);
 				} else
-					HammerCore.particleProxy.spawnZap(world, new Vec3d(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5), new Vec3d(pos.offset(rot).getX() + .5, pos.offset(rot).getY() + .5, pos.offset(rot).getZ() + .5), Color.BLUE);
+					HammerCore.particleProxy.spawnZap(world, new Vec3d(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5), new Vec3d(pos.offset(rot).getX() + .5, pos.offset(rot).getY() + .5, pos.offset(rot).getZ() + .5), Color.BLUE.getRGB());
 			}
 		}
 	}
