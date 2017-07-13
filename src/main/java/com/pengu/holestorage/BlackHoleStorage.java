@@ -18,10 +18,10 @@ import com.pengu.holestorage.init.RecipesBHS;
 import com.pengu.holestorage.proxy.CommonProxy;
 import com.pengu.holestorage.tabs.CreativeTabBlackHoleStorage;
 
-@Mod(modid = Info.MOD_ID, version = Info.MOD_VERSION, name = Info.MOD_NAME, dependencies = "required-after:hammercore")
+@Mod(modid = Info.MOD_ID, version = Info.MOD_VERSION, name = Info.MOD_NAME, dependencies = "required-after:hammercore", guiFactory = "com.pengu.holestorage.configs.BHSConfigFactory")
 public class BlackHoleStorage
 {
-	@SidedProxy(modId = Info.MOD_ID, clientSide = Info.PROXY_CLIENT, serverSide = Info.PROXY_SERVER)
+	@SidedProxy(clientSide = Info.PROXY_CLIENT, serverSide = Info.PROXY_SERVER)
 	public static CommonProxy proxy;
 	
 	@Instance
@@ -36,7 +36,6 @@ public class BlackHoleStorage
 		cfg = cfg.substring(0, cfg.lastIndexOf("."));
 		cfgFolder = new File(cfg);
 		cfgFolder.mkdirs();
-		File main_cfg = new File(cfgFolder, "main.cfg");
 		
 		proxy.preInit();
 		SimpleRegistration.registerFieldBlocksFrom(BlocksBHS.class, Info.MOD_ID, CreativeTabBlackHoleStorage.BLACK_HOLE_STORAGE);

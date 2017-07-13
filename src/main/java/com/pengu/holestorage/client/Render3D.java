@@ -78,18 +78,4 @@ public class Render3D
 		GlStateManager.disableBlend();
 		GL11.glPopMatrix();
 	}
-	
-	public static List<Particle> getParticlesInRange(AxisAlignedBB bounds)
-	{
-		List<Particle> particles = new ArrayList<>();
-		List<Particle> ps = ParticleList.getParticlesList();
-		for(int i = 0; i < ps.size(); ++i)
-		{
-			Particle p = ps.get(i);
-			AxisAlignedBB pbb = p.getBoundingBox();
-			if(pbb != null && pbb.intersects(bounds))
-				particles.add(p);
-		}
-		return particles;
-	}
 }

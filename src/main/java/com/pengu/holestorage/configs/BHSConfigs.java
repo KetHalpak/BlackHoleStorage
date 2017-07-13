@@ -1,5 +1,6 @@
 package com.pengu.holestorage.configs;
 
+import java.io.File;
 import java.math.BigDecimal;
 
 import net.minecraftforge.common.config.Configuration;
@@ -9,12 +10,15 @@ import com.pengu.hammercore.cfg.IConfigReloadListener;
 import com.pengu.hammercore.cfg.fields.ModConfigPropertyBool;
 import com.pengu.hammercore.cfg.fields.ModConfigPropertyFloat;
 import com.pengu.hammercore.cfg.fields.ModConfigPropertyInt;
+import com.pengu.holestorage.BlackHoleStorage;
 import com.pengu.holestorage.Info;
 import com.pengu.holestorage.tile.TileBlackHoleFormer;
 
 @HCModConfigurations(modid = Info.MOD_ID)
 public class BHSConfigs implements IConfigReloadListener
 {
+	public static Configuration cfgs;
+	
 	@ModConfigPropertyBool(name = "Use Shaders", category = "Client", defaultValue = true, comment = "Set this to true to use shaders for rendering black hole's shield.\nIf your PC doesn't support shaders, this option will be ignored and you won't be able to see the shield levels, sorry :(")
 	public static boolean client_useShaders = true;
 	
@@ -33,6 +37,13 @@ public class BHSConfigs implements IConfigReloadListener
 	@Override
 	public void reloadCustom(Configuration cfgs)
 	{
+		BHSConfigs.cfgs = cfgs;
 		TileBlackHoleFormer.ABSORBED = new BigDecimal(cfgs.get("Energy", "Black Hole Former", 32_000_000_000L, "How much energy do you need to create a black hole?").getDouble());
+	}
+	
+	@Override
+	public File getSuggestedConfigurationFile()
+	{
+	    return new File(BlackHoleStorage.cfgFolder, "main.cfg");
 	}
 }

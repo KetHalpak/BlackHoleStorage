@@ -5,10 +5,10 @@ import java.util.List;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.util.math.AxisAlignedBB;
 
+import com.pengu.hammercore.client.particle.api.ParticleList;
 import com.pengu.hammercore.math.MathHelper;
 import com.pengu.hammercore.proxy.ParticleProxy_Client;
 import com.pengu.holestorage.BlackHoleStorage;
-import com.pengu.holestorage.client.Render3D;
 import com.pengu.holestorage.client.particle.ParticleEnergyFX;
 import com.pengu.holestorage.client.particle.ParticleGeneric;
 import com.pengu.holestorage.client.particle.ParticleLiquid;
@@ -44,7 +44,7 @@ public class BlackHoleVortex extends Vortex
 		z = tile.getPos().getZ() + .5;
 		
 		AxisAlignedBB dieAABB = new AxisAlignedBB(x - .25, y - .25, z - .25, x + .25, y + .25, z + .25);
-		List<Particle> particles = Render3D.getParticlesInRange(getBoundingBox());
+		List<Particle> particles = ParticleList.getParticlesWithinAABB(getBoundingBox());
 		for(Particle p : particles)
 		{
 			if(p instanceof ParticleLiquid || p instanceof ParticleLiquidTextured || p instanceof ParticleEnergyFX || p instanceof ParticleGeneric)

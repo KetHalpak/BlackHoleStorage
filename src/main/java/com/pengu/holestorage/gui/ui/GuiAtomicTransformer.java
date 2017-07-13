@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.translation.I18n;
@@ -29,6 +30,15 @@ public class GuiAtomicTransformer extends GuiContainer
 		this.tile = tile;
 		xSize = 176;
 		ySize = 166;
+	}
+	
+	@Override
+	public void drawScreen(int mouseX, int mouseY, float partialTicks)
+	{
+		drawDefaultBackground();
+		GlStateManager.color(1, 1, 1);
+	    super.drawScreen(mouseX, mouseY, partialTicks);
+	    renderHoveredToolTip(mouseX, mouseY);
 	}
 	
 	@Override
@@ -63,7 +73,5 @@ public class GuiAtomicTransformer extends GuiContainer
 			} catch(Throwable error)
 			{
 			}
-		
-		GL11.glDisable(GL11.GL_BLEND);
 	}
 }

@@ -9,10 +9,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import com.pengu.hammercore.client.particle.api.ParticleList;
 import com.pengu.hammercore.math.MathHelper;
 import com.pengu.hammercore.proxy.ParticleProxy_Client;
 import com.pengu.holestorage.BlackHoleStorage;
-import com.pengu.holestorage.client.Render3D;
 
 public class BookcaseVortex extends Vortex
 {
@@ -54,7 +54,7 @@ public class BookcaseVortex extends Vortex
 		
 		AxisAlignedBB dieAABB = new AxisAlignedBB(pos.getX() + .1, pos.getY() + .1, pos.getZ() + .1, pos.getX() + .9, pos.getY() + .9, pos.getZ() + .9);
 		
-		List<Particle> particles = Render3D.getParticlesInRange(getBoundingBox());
+		List<Particle> particles = ParticleList.getParticlesWithinAABB(getBoundingBox());
 		for(Particle p : particles)
 		{
 			double mx = ParticleProxy_Client.getParticleMotionX(p);
