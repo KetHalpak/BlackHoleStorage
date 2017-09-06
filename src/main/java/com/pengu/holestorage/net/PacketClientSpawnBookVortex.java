@@ -1,15 +1,15 @@
 package com.pengu.holestorage.net;
 
+import com.pengu.hammercore.net.packetAPI.iPacket;
+import com.pengu.hammercore.net.packetAPI.iPacketListener;
+import com.pengu.holestorage.bookmaking.BookMakeHandler;
+
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.pengu.hammercore.net.packetAPI.IPacket;
-import com.pengu.hammercore.net.packetAPI.IPacketListener;
-import com.pengu.holestorage.bookmaking.BookMakeHandler;
-
-public class PacketClientSpawnBookVortex implements IPacket, IPacketListener<PacketClientSpawnBookVortex, IPacket>
+public class PacketClientSpawnBookVortex implements iPacket, iPacketListener<PacketClientSpawnBookVortex, iPacket>
 {
 	BlockPos pos;
 	int dim;
@@ -37,7 +37,7 @@ public class PacketClientSpawnBookVortex implements IPacket, IPacketListener<Pac
 		pos = BlockPos.fromLong(nbt.getLong("p"));
 	}
 	
-	public IPacket onArrived(PacketClientSpawnBookVortex packet, net.minecraftforge.fml.common.network.simpleimpl.MessageContext context)
+	public iPacket onArrived(PacketClientSpawnBookVortex packet, net.minecraftforge.fml.common.network.simpleimpl.MessageContext context)
 	{
 		if(context.side == Side.CLIENT)
 			packet.handle();

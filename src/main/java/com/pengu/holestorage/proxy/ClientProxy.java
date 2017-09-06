@@ -5,26 +5,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.multiplayer.WorldClient;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.RenderItem;
-import net.minecraft.entity.Entity;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.translation.I18n;
-import net.minecraft.world.World;
-import net.minecraftforge.client.event.GuiOpenEvent;
-import net.minecraftforge.client.event.RenderPlayerEvent;
-import net.minecraftforge.client.model.obj.OBJLoader;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.world.WorldEvent;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
 import com.pengu.hammercore.HammerCore;
 import com.pengu.hammercore.bookAPI.Book;
 import com.pengu.hammercore.bookAPI.BookCategory;
@@ -33,7 +13,7 @@ import com.pengu.hammercore.bookAPI.BookPage;
 import com.pengu.hammercore.bookAPI.pages.BookPageTextPlain;
 import com.pengu.hammercore.client.particle.RecipeRenderer;
 import com.pengu.hammercore.client.render.item.ItemRenderingHandler;
-import com.pengu.hammercore.gui.book.GuiBookEntry;
+import com.pengu.hammercore.core.gui.book.GuiBookEntry;
 import com.pengu.holestorage.Info;
 import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
 import com.pengu.holestorage.api.atomictransformer.SimpleTransformerRecipe;
@@ -57,6 +37,26 @@ import com.pengu.holestorage.tile.TileBlackHoleFormer;
 import com.pengu.holestorage.tile.TileWormhole;
 import com.pengu.holestorage.tile.TileWormholeFormer;
 import com.pengu.holestorage.vortex.Vortex;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.multiplayer.WorldClient;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.RenderItem;
+import net.minecraft.entity.Entity;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.translation.I18n;
+import net.minecraft.world.World;
+import net.minecraftforge.client.event.GuiOpenEvent;
+import net.minecraftforge.client.event.RenderPlayerEvent;
+import net.minecraftforge.client.model.obj.OBJLoader;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.world.WorldEvent;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ClientProxy extends CommonProxy
 {

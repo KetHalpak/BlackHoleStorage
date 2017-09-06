@@ -1,14 +1,14 @@
 package com.pengu.holestorage.net;
 
+import com.pengu.hammercore.common.utils.WorldUtil;
+import com.pengu.hammercore.net.packetAPI.iPacket;
+import com.pengu.hammercore.net.packetAPI.iPacketListener;
+import com.pengu.holestorage.BlackHoleStorage;
+
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.hammercore.net.packetAPI.IPacket;
-import com.pengu.hammercore.net.packetAPI.IPacketListener;
-import com.pengu.holestorage.BlackHoleStorage;
-
-public class PacketSpawnEnergyFX implements IPacket, IPacketListener<PacketSpawnEnergyFX, IPacket>
+public class PacketSpawnEnergyFX implements iPacket, iPacketListener<PacketSpawnEnergyFX, iPacket>
 {
 	private int dim, rf;
 	private double x, y, z, tx, ty, tz;
@@ -56,7 +56,7 @@ public class PacketSpawnEnergyFX implements IPacket, IPacketListener<PacketSpawn
 	}
 	
 	@Override
-	public IPacket onArrived(PacketSpawnEnergyFX packet, MessageContext context)
+	public iPacket onArrived(PacketSpawnEnergyFX packet, MessageContext context)
 	{
 		BlackHoleStorage.proxy.spawnEnergyFX(WorldUtil.getWorld(context, dim), packet.x, packet.y, packet.z, packet.tx, packet.ty, packet.tz, packet.rf);
 		return null;

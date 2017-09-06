@@ -1,0 +1,10 @@
+{
+    "parent": "item/generated",
+    "overrides": [
+        { "predicate": { "type": 0.0 }, "model": "blackholestorage:item/black_hole_shield" },
+		{ "predicate": { "type": 1.0 }, "model": "blackholestorage:item/anti_matter_core" },
+		{ "predicate": { "type": 2.0 }, "model": "blackholestorage:item/anti_matter_electron1" },
+		{ "predicate": { "type": 3.0 }, "model": "blackholestorage:item/anti_matter_electron2" },
+		{ "predicate": { "type": 4.0 }, "model": "blackholestorage:item/anti_matter_electron3" }
+    ]
+}

@@ -1,5 +1,11 @@
 package com.pengu.holestorage.client.render.item;
 
+import org.lwjgl.opengl.GL11;
+
+import com.pengu.hammercore.client.render.item.iItemRender;
+import com.pengu.holestorage.init.ItemsBHS;
+import com.pengu.holestorage.items.ItemUnobtainable;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
@@ -7,18 +13,12 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.item.ItemStack;
 
-import org.lwjgl.opengl.GL11;
-
-import com.pengu.hammercore.client.render.item.IItemRender;
-import com.pengu.holestorage.init.ItemsBHS;
-import com.pengu.holestorage.items.ItemUnobtainable;
-
 /**
  * This class renders the animation for AntiMatter
  * 
  * @author APengu
  */
-public class ItemRenderAntiMatter implements IItemRender
+public class ItemRenderAntiMatter implements iItemRender
 {
 	private static final ItemStack CORE = new ItemStack(ItemsBHS.ITEM_UNOBTAINABLE, 1, ItemUnobtainable.anti_matter_core), ELECTRON1 = new ItemStack(ItemsBHS.ITEM_UNOBTAINABLE, 1, ItemUnobtainable.anti_matter_electron1), ELECTRON2 = new ItemStack(ItemsBHS.ITEM_UNOBTAINABLE, 1, ItemUnobtainable.anti_matter_electron2), ELECTRON3 = new ItemStack(ItemsBHS.ITEM_UNOBTAINABLE, 1, ItemUnobtainable.anti_matter_electron3);
 	

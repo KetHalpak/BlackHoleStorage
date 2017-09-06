@@ -2,6 +2,17 @@ package com.pengu.holestorage.tile;
 
 import java.math.BigInteger;
 
+import com.pengu.hammercore.common.InterItemStack;
+import com.pengu.hammercore.common.inventory.InventoryNonTile;
+import com.pengu.hammercore.common.inventory.iInventoryListener;
+import com.pengu.hammercore.common.utils.BigIntegerUtils;
+import com.pengu.hammercore.common.utils.ItemStackUtil;
+import com.pengu.hammercore.tile.TileSyncableTickable;
+import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
+import com.pengu.holestorage.api.atomictransformer.SimpleTransformerRecipe;
+import com.pengu.holestorage.gui.inv.ContainerAtomicTransformer;
+import com.pengu.holestorage.gui.ui.GuiAtomicTransformer;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -11,18 +22,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 
-import com.pengu.hammercore.common.InterItemStack;
-import com.pengu.hammercore.common.inventory.IInventoryListener;
-import com.pengu.hammercore.common.inventory.InventoryNonTile;
-import com.pengu.hammercore.common.utils.BigIntegerUtils;
-import com.pengu.hammercore.common.utils.ItemStackUtil;
-import com.pengu.hammercore.tile.TileSyncableTickable;
-import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
-import com.pengu.holestorage.api.atomictransformer.SimpleTransformerRecipe;
-import com.pengu.holestorage.gui.inv.ContainerAtomicTransformer;
-import com.pengu.holestorage.gui.ui.GuiAtomicTransformer;
-
-public class TileAtomicTransformer extends TileSyncableTickable implements IEnergyStorage, ISidedInventory, IInventoryListener
+public class TileAtomicTransformer extends TileSyncableTickable implements IEnergyStorage, ISidedInventory, iInventoryListener
 {
 	public BigInteger stored = BigInteger.ZERO;
 	public InventoryNonTile inventory = new InventoryNonTile(2);

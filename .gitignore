@@ -22,5 +22,5 @@ eclipse
 run
 libs
 *.bat
-*.zip
 *.rar
+/bin/

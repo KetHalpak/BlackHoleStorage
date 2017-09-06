@@ -1,14 +1,14 @@
 package com.pengu.holestorage.net;
 
+import com.pengu.hammercore.common.utils.WorldUtil;
+import com.pengu.hammercore.net.packetAPI.iPacket;
+import com.pengu.hammercore.net.packetAPI.iPacketListener;
+import com.pengu.holestorage.BlackHoleStorage;
+
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.hammercore.net.packetAPI.IPacket;
-import com.pengu.hammercore.net.packetAPI.IPacketListener;
-import com.pengu.holestorage.BlackHoleStorage;
-
-public class PacketSpawnLiquidFX implements IPacket, IPacketListener<PacketSpawnLiquidFX, IPacket>
+public class PacketSpawnLiquidFX implements iPacket, iPacketListener<PacketSpawnLiquidFX, iPacket>
 {
 	int dim;
 	double x;
@@ -74,7 +74,7 @@ public class PacketSpawnLiquidFX implements IPacket, IPacketListener<PacketSpawn
 	}
 	
 	@Override
-	public IPacket onArrived(PacketSpawnLiquidFX packet, MessageContext context)
+	public iPacket onArrived(PacketSpawnLiquidFX packet, MessageContext context)
 	{
 		packet.handle(context);
 		return null;

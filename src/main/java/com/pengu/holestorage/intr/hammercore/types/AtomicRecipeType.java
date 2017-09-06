@@ -2,16 +2,16 @@ package com.pengu.holestorage.intr.hammercore.types;
 
 import java.math.BigInteger;
 
+import com.pengu.hammercore.recipeAPI.iRecipeType;
+import com.pengu.hammercore.recipeAPI.iRecipeType.RecipeParseException;
+import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
+import com.pengu.holestorage.api.atomictransformer.SimpleTransformerRecipe;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.Constants.NBT;
 
-import com.pengu.hammercore.recipeAPI.IRecipeType;
-import com.pengu.hammercore.recipeAPI.IRecipeType.RecipeParseException;
-import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
-import com.pengu.holestorage.api.atomictransformer.SimpleTransformerRecipe;
-
-public class AtomicRecipeType implements IRecipeType<SimpleTransformerRecipe>
+public class AtomicRecipeType implements iRecipeType<SimpleTransformerRecipe>
 {
 	@Override
 	public boolean isJeiSupported(SimpleTransformerRecipe recipe)

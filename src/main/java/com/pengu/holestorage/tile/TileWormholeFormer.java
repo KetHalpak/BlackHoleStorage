@@ -1,5 +1,13 @@
 package com.pengu.holestorage.tile;
 
+import com.pengu.hammercore.common.InterItemStack;
+import com.pengu.hammercore.common.capabilities.CapabilityEJ;
+import com.pengu.hammercore.common.capabilities.FEEnergyStorage;
+import com.pengu.hammercore.common.inventory.InventoryNonTile;
+import com.pengu.hammercore.energy.iPowerStorage;
+import com.pengu.hammercore.tile.TileSyncableTickable;
+import com.pengu.holestorage.init.BlocksBHS;
+
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -14,15 +22,7 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
-import com.pengu.hammercore.common.InterItemStack;
-import com.pengu.hammercore.common.capabilities.CapabilityEJ;
-import com.pengu.hammercore.common.capabilities.FEEnergyStorage;
-import com.pengu.hammercore.common.inventory.InventoryNonTile;
-import com.pengu.hammercore.energy.IPowerStorage;
-import com.pengu.hammercore.tile.TileSyncableTickable;
-import com.pengu.holestorage.init.BlocksBHS;
-
-public class TileWormholeFormer extends TileSyncableTickable implements IEnergyStorage, IPowerStorage
+public class TileWormholeFormer extends TileSyncableTickable implements IEnergyStorage, iPowerStorage
 {
 	public FEEnergyStorage storage = new FEEnergyStorage(2_048_000_000);
 	public InventoryNonTile inventory = new InventoryNonTile(2);

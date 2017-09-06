@@ -2,6 +2,13 @@ package com.pengu.holestorage;
 
 import java.io.File;
 
+import com.pengu.hammercore.common.SimpleRegistration;
+import com.pengu.holestorage.init.BlocksBHS;
+import com.pengu.holestorage.init.ItemsBHS;
+import com.pengu.holestorage.init.RecipesBHS;
+import com.pengu.holestorage.proxy.CommonProxy;
+import com.pengu.holestorage.tabs.CreativeTabBlackHoleStorage;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -10,13 +17,6 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
-import com.pengu.hammercore.init.SimpleRegistration;
-import com.pengu.holestorage.init.BlocksBHS;
-import com.pengu.holestorage.init.ItemsBHS;
-import com.pengu.holestorage.init.RecipesBHS;
-import com.pengu.holestorage.proxy.CommonProxy;
-import com.pengu.holestorage.tabs.CreativeTabBlackHoleStorage;
 
 @Mod(modid = Info.MOD_ID, version = Info.MOD_VERSION, name = Info.MOD_NAME, dependencies = "required-after:hammercore", guiFactory = "com.pengu.holestorage.configs.BHSConfigFactory")
 public class BlackHoleStorage
@@ -49,6 +49,6 @@ public class BlackHoleStorage
 		MinecraftForge.EVENT_BUS.register(proxy);
 		proxy.init();
 		
-		FMLInterModComms.sendMessage("waila", "register", "com.mrdimka.holestorage.intr.waila.BHSWAILA.registerWAIA");
+		FMLInterModComms.sendMessage("waila", "register", "com.pengu.holestorage.intr.waila.BHSWAILA.registerWAIA");
 	}
 }
