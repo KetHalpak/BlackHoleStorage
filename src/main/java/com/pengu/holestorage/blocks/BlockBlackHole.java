@@ -63,7 +63,7 @@ public class BlockBlackHole extends Block implements ITileEntityProvider
 	@Override
 	public EnumBlockRenderType getRenderType(IBlockState state)
 	{
-		return BHSShaders.useShaders() ? EnumBlockRenderType.ENTITYBLOCK_ANIMATED : EnumBlockRenderType.MODEL;
+		return (net.minecraft.client.renderer.OpenGlHelper.shadersSupported && com.pengu.holestorage.configs.BHSConfigs.client_useShaders) ? EnumBlockRenderType.ENTITYBLOCK_ANIMATED : EnumBlockRenderType.MODEL;
 	}
 	
 	@Override

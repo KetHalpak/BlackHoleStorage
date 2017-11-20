@@ -4,13 +4,13 @@ author=APengu
 #Runtime info
 forge_version=14.23.0.2529
 minecraft_version=1.12.2
-mcp=snapshot_20170624
+mcp=snapshot_20170707
 hc_version=1.9.5.2
 
 #Mod info
-mod_id=template
-mod_id_fancy=Template
-mod_name=Template Mod
-mod_version=1a/b/r
-cf_project=CUSEFORGE_ID
-release_type=alpha/beta/release
+mod_id=holestorage
+mod_id_fancy=BlackHoleStorage
+mod_name=Black Hole Storage
+mod_version=18r
+cf_project=261061
+release_type=release

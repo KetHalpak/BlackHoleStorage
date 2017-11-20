@@ -58,11 +58,6 @@ processResources
 {
     inputs.property "version", project.version
     inputs.property "mcversion", config.minecraft_version
-	inputs.property "author", config.author
-	inputs.property "mod_id", config.mod_id
-	inputs.property "mod_name", config.mod_name
-	inputs.property "mod_desc", config.mod_desc
-	inputs.property "mod_url", config.mod_url
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
 		include 'pack.mcmeta'
