@@ -1,8 +1,16 @@
-forge_version=1.12-14.21.1.2400
-mod_version=17r
-hammercore_version=1.9.2
+#Project info
+author=APengu
 
-release_type=release
-minecraft_version=1.12
+#Runtime info
+forge_version=14.23.0.2529
+minecraft_version=1.12.2
+mcp=snapshot_20170624
+hc_version=1.9.5.2
 
-project_id=261061
+#Mod info
+mod_id=template
+mod_id_fancy=Template
+mod_name=Template Mod
+mod_version=1a/b/r
+cf_project=CUSEFORGE_ID
+release_type=alpha/beta/release

@@ -1,10 +1,14 @@
 [
 	{
-		"modid": "blackholestorage",
-		"name": "Black Hole Storage",
-		"description": "Store infinite amounts of something inside of a stabilized black holes.",
-		"url": "",
-		"authorList": ["APengu"],
-		"logo": "assets/blackholestorage/textures/logo.png"
+		"modid": "${mod_id}",
+		"name": "${mod_name}",
+		"description": "${mod_desc}",
+		"version": "${version}",
+		"mcversion": "${mcversion}",
+		"url": "${mod_url}",
+		"authorList": [ "${author}" ],
+		"credits": "APengu for making this template",
+		"logoFile": "logo.png",
+		"dependencies": []
 	}
 ]

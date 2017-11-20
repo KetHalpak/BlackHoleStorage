@@ -21,6 +21,4 @@ build
 eclipse
 run
 libs
-*.bat
-*.zip
 *.rar
