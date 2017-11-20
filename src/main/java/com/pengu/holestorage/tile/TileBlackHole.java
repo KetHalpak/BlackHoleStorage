@@ -19,9 +19,10 @@ import net.minecraft.util.math.BlockPos;
 
 import com.pengu.hammercore.HammerCore;
 import com.pengu.hammercore.api.explosion.CustomExplosion;
+import com.pengu.hammercore.net.HCNetwork;
 import com.pengu.hammercore.tile.TileSyncableTickable;
 import com.pengu.holestorage.BlackHoleStorage;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.api.hole.BlackHolePacket;
 import com.pengu.holestorage.api.hole.BlackHolePacket.EnumBlackHolePacketType;
 import com.pengu.holestorage.api.hole.IBlackHole;
@@ -30,6 +31,7 @@ import com.pengu.holestorage.configs.BHSConfigs;
 import com.pengu.holestorage.init.DamageSourcesBHS;
 import com.pengu.holestorage.init.ItemsBHS;
 import com.pengu.holestorage.intr.lostthaumaturgy.LTBHS;
+import com.pengu.holestorage.net.PacketExplosion;
 import com.pengu.holestorage.vortex.BlackHoleVortex;
 
 public class TileBlackHole extends TileSyncableTickable implements IBlackHole
@@ -59,6 +61,9 @@ public class TileBlackHole extends TileSyncableTickable implements IBlackHole
 	{
 		BlackHoleStorage.proxy.addParticleVortex(vortex);
 		
+		if((ticksExisted - 24) % 100 == 0 && !world.isRemote)
+			HammerCore.audioProxy.playSoundAt(world, InfoBHS.MOD_ID + ":black_hole_loop", pos, 2F + (float) Math.sqrt(radius), 1F, SoundCategory.BLOCKS);
+		
 		int maxTake = Math.min(shieldEnergy, (int) (200 + 16 * Math.sqrt(Math.sqrt(additionalMass / 16D))));
 		shieldEnergy -= maxTake;
 		
@@ -70,19 +75,19 @@ public class TileBlackHole extends TileSyncableTickable implements IBlackHole
 		
 		radius = instabillity * 16 + Math.sqrt(instabillity * (16 * Math.sqrt(additionalMass / 16D)));
 		
-		canPull = instabillity > 0D;
+		canPull = instabillity > 0D && ticksExisted > 20;
 		
 		currentShieldLevel = (float) shieldEnergy / (float) shieldEnergyMax;
 		
-		eventHorizon = 4D + Math.sqrt(additionalMass) + Math.sqrt(additionalMass);
+		eventHorizon = 4D + Math.sqrt(additionalMass) * 2;
 		
-		if((ticksExisted - 24) % 100 == 0 && world.isRemote)
-			HammerCore.audioProxy.playSoundAt(world, Info.MOD_ID + ":black_hole_loop", pos, 2F + (float) Math.sqrt(radius), 1F, SoundCategory.BLOCKS);
+		if(world.isRemote)
+			return;
 		
-		if(ticksExisted % 100 == 0 && !world.isRemote)
+		if(atTickRate(20))
 			sync();
 		
-		if(canPull && !world.isRemote)
+		if(canPull)
 		{
 			if(chosen != lastChosen)
 				chosenTicks = 0;
@@ -123,29 +128,29 @@ public class TileBlackHole extends TileSyncableTickable implements IBlackHole
 			{
 				if(e instanceof EntityPlayer && ((EntityPlayer) e).capabilities.isCreativeMode)
 					continue;
-				if(e.getDistanceSq(pos) < eventHorizon)
+				if(e.getDistanceSq(pos) < eventHorizon && !e.isDead)
 				{
 					double volume = 0;
 					AxisAlignedBB aabb = e.getEntityBoundingBox();
 					volume = (aabb.maxX - aabb.minX) * (aabb.maxY - aabb.minY) * (aabb.maxZ - aabb.minZ);
 					
 					additionalMass += volume;
-					if(!world.isRemote)
-						sync();
+					sync();
 					
 					if(e instanceof EntityLivingBase)
-						e.attackEntityFrom(DamageSourcesBHS.BLACK_HOLE, 1000000F);
+						e.attackEntityFrom(DamageSourcesBHS.BLACK_HOLE, 10000000F);
 					else
 					{
 						if(e instanceof EntityItem)
 						{
 							EntityItem ei = (EntityItem) e;
 							ItemStack stack = ei.getItem();
-							if(stack.getItem() == ItemsBHS.ANTI_MATTER && !world.isRemote)
+							if(stack.getItem() == ItemsBHS.ANTI_MATTER)
 							{
 								world.setBlockToAir(pos);
-								HammerCore.audioProxy.playSoundAt(world, Info.MOD_ID + ":black_hole_implode", pos, 256F, 1F, SoundCategory.BLOCKS);
+								HammerCore.audioProxy.playSoundAt(world, InfoBHS.MOD_ID + ":black_hole_implode", pos, 256F, 1F, SoundCategory.BLOCKS);
 								CustomExplosion.doExplosionAt(world, pos, (2 + (radius > 16 ? (float) Math.sqrt(radius - 16) * 2F : 0)) * BHSConfigs.blackHole_explosionMultiplier, DamageSourcesBHS.BLACK_HOLE);
+								HCNetwork.manager.sendToAllAround(new PacketExplosion(getPos().toLong()), getSyncPoint(256));
 								LTBHS.addRadiation(world, pos, .001F * (float) eventHorizon);
 							}
 						}

@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.pengu.hammercore.common.utils.WorldUtil;
 import com.pengu.hammercore.tile.TileSyncable;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.blocks.BlockWormhole;
 import com.pengu.holestorage.client.entity.EntityWormhole;
 
@@ -110,7 +110,7 @@ public class TileWormhole extends TileSyncable
 		{
 			if(getBlockType() instanceof BlockWormhole)
 			{
-				EnumFacing facing = world.getBlockState(pos).getValue(Info.FACING_UDEWSN);
+				EnumFacing facing = world.getBlockState(pos).getValue(InfoBHS.FACING_UDEWSN);
 				boundWormholeEntity = new EntityWormhole(world, pos.getX(), pos.getY(), pos.getZ(), facing);
 				world.spawnEntity((EntityWormhole) boundWormholeEntity);
 			}

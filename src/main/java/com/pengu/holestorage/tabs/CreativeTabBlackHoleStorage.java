@@ -3,7 +3,7 @@ package com.pengu.holestorage.tabs;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.init.BlocksBHS;
 
 public class CreativeTabBlackHoleStorage extends CreativeTabs
@@ -14,7 +14,7 @@ public class CreativeTabBlackHoleStorage extends CreativeTabs
 	
 	private CreativeTabBlackHoleStorage()
 	{
-		super(Info.MOD_ID);
+		super(InfoBHS.MOD_ID);
 	}
 	
 	@Override

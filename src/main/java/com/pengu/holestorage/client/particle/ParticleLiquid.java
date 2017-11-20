@@ -21,7 +21,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.pengu.hammercore.client.particle.api.SimpleParticle;
 import com.pengu.hammercore.glelwjgl.CoreGLE;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.client.Quat;
 
 public class ParticleLiquid extends SimpleParticle
@@ -107,7 +107,7 @@ public class ParticleLiquid extends SimpleParticle
 	}
 	
 	CoreGLE gle = new CoreGLE();
-	private static final ResourceLocation TEX0 = new ResourceLocation(Info.MOD_ID, "textures/particles/liquid.png");
+	private static final ResourceLocation TEX0 = new ResourceLocation(InfoBHS.MOD_ID, "textures/particles/liquid.png");
 	
 	@Override
 	public void doRenderParticle(double x, double y, double z, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ)

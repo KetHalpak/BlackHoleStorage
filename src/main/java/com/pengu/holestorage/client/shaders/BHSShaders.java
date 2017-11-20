@@ -1,14 +1,14 @@
 package com.pengu.holestorage.client.shaders;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.OpenGlHelper;
-
 import org.lwjgl.opengl.ARBShaderObjects;
 
 import com.pengu.hammercore.client.render.shader.HCShaderPipeline;
-import com.pengu.hammercore.client.render.shader.IShaderOperation;
 import com.pengu.hammercore.client.render.shader.ShaderProgram;
+import com.pengu.hammercore.client.render.shader.iShaderOperation;
 import com.pengu.holestorage.configs.BHSConfigs;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.OpenGlHelper;
 
 public class BHSShaders
 {
@@ -33,7 +33,7 @@ public class BHSShaders
 		blackHole.validate();
 	}
 	
-	public static class BlackHoleOperation implements IShaderOperation
+	public static class BlackHoleOperation implements iShaderOperation
 	{
 		@Override
 		public boolean load(ShaderProgram program)

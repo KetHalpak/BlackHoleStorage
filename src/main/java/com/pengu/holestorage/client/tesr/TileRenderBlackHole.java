@@ -26,7 +26,7 @@ public class TileRenderBlackHole extends TESR<TileBlackHole>
 	private void makeStack()
 	{
 		renderStack = new ItemStack(BlocksBHS.BLACK_HOLE);
-		shieldStack = new ItemStack(ItemsBHS.ITEM_UNOBTAINABLE, 1, ItemUnobtainable.black_hole_shield);
+		shieldStack = new ItemStack(ItemsBHS.BLACK_HOLE_SHIELD);
 	}
 	
 	@Override
@@ -36,7 +36,7 @@ public class TileRenderBlackHole extends TESR<TileBlackHole>
 		
 		if(renderStack == null || renderStack.isEmpty() || renderStack.getItem() != Item.getItemFromBlock(BlocksBHS.BLACK_HOLE))
 			makeStack();
-		if(shieldStack == null || shieldStack.isEmpty() || shieldStack.getItem() != ItemsBHS.ITEM_UNOBTAINABLE)
+		if(shieldStack == null || shieldStack.isEmpty() || shieldStack.getItem() != ItemsBHS.BLACK_HOLE_SHIELD)
 			makeStack();
 		
 		GL11.glPushMatrix();
@@ -44,7 +44,7 @@ public class TileRenderBlackHole extends TESR<TileBlackHole>
 		
 		RenderItem itemRender = Minecraft.getMinecraft().getRenderItem();
 		
-		double scale = 5.7 + Math.sqrt(te.additionalMass);
+		double scale = 1.7 + Math.sqrt(te.additionalMass);
 		
 		double blackHoleRotationSpeed = (1 - te.currentShieldLevel);
 		
@@ -61,16 +61,14 @@ public class TileRenderBlackHole extends TESR<TileBlackHole>
 			
 		scale = scale * 1.06 * 1.15 + Math.sin(System.currentTimeMillis() / 25000D) * .1D;
 		
-		GL11.glTranslated(x + .5, y + .47, z + .5);
+		GL11.glTranslated(x + .5, y + .55 + -0.2 * scale, z + .5);
+		GL11.glRotated((System.currentTimeMillis() / 500D % 10000D) * -360 * 8 * (te.currentShieldLevel + .005F), 0, 1, 0);
+		GL11.glScaled(scale, scale, scale);
 		
 		double offsetConst = .125;
 		GL11.glPushMatrix();
 		
-		// GL11.glRotated((System.currentTimeMillis() / 25000D % 10000D) * 90,
-		// 0, 1, 0);
-		
-		GL11.glScaled(scale, scale, scale);
-		GL11.glTranslated(offsetConst, offsetConst / -2D, offsetConst);
+		GL11.glTranslated(offsetConst, offsetConst, offsetConst);
 		
 		blackHole.freeBindShader();
 		int loc = blackHole.getUniformLoc("shield");

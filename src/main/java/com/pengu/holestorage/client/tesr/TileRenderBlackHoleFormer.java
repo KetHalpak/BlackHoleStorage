@@ -18,12 +18,12 @@ public class TileRenderBlackHoleFormer extends TESR<TileBlackHoleFormer>
 	{
 		double progress = te.EnergyStored.divide(te.ABSORBED).doubleValue();
 		double const1 = .5174425935;
-		double lift = progress >= const1 ? ((progress - const1) / (1 - const1)) * .756 : 0;
-		double max = 4.5;
+		double lift = progress >= const1 ? ((progress - const1) / (1 - const1)) * 1.199 : 0;
+		double max = 1.7;
 		progress *= max;
 		
 		GL11.glPushMatrix();
-		GL11.glTranslated(x + 0.52, y + .65 - progress / max / 1.5 + lift, z + 0.48);
+		GL11.glTranslated(x + .5, y + .65 - progress / max / 1.5 + lift, z + .5);
 		GL11.glScaled(progress, progress, progress);
 		Minecraft mc = Minecraft.getMinecraft();
 		

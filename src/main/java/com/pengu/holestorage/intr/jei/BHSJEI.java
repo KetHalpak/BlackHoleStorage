@@ -1,5 +1,12 @@
 package com.pengu.holestorage.intr.jei;
 
+import com.pengu.holestorage.InfoBHS;
+import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
+import com.pengu.holestorage.gui.ui.GuiAtomicTransformer;
+import com.pengu.holestorage.init.BlocksBHS;
+import com.pengu.holestorage.intr.jei.atomictransformer.AtomicTransformerCategory;
+import com.pengu.holestorage.intr.jei.atomictransformer.AtomicTransformerHandler;
+
 import mezz.jei.api.IJeiRuntime;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
@@ -8,18 +15,10 @@ import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.ingredients.IModIngredientRegistration;
 import net.minecraft.item.ItemStack;
 
-import com.pengu.holestorage.Info;
-import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
-import com.pengu.holestorage.gui.ui.GuiAtomicTransformer;
-import com.pengu.holestorage.init.BlocksBHS;
-import com.pengu.holestorage.init.ItemsBHS;
-import com.pengu.holestorage.intr.jei.atomictransformer.AtomicTransformerCategory;
-import com.pengu.holestorage.intr.jei.atomictransformer.AtomicTransformerHandler;
-
 @JEIPlugin
 public class BHSJEI implements IModPlugin
 {
-	public static final String ATOMIC_TRANSFORMER = Info.MOD_ID + ":atomic_transformer";
+	public static final String ATOMIC_TRANSFORMER = InfoBHS.MOD_ID + ":atomic_transformer";
 	
 	@Override
 	public void register(IModRegistry reg)
@@ -32,8 +31,6 @@ public class BHSJEI implements IModPlugin
 		reg.addRecipeClickArea(GuiAtomicTransformer.class, 17, 30, 16, 26, ATOMIC_TRANSFORMER);
 		
 		reg.addRecipes(AtomicTransformerRecipes.getRecipes());
-		
-		reg.addDescription(new ItemStack(ItemsBHS.KNOWLEDGE_TOME), "jei." + Info.MOD_ID + ".desc:knowledge_tome");
 	}
 	
 	@Override

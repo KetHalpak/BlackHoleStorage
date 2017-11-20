@@ -1,28 +1,35 @@
 package com.pengu.holestorage.tile;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.text.DecimalFormat;
+import java.util.List;
+
+import com.pengu.hammercore.common.InterItemStack;
+import com.pengu.hammercore.common.inventory.InventoryNonTile;
+import com.pengu.hammercore.common.inventory.iInventoryListener;
+import com.pengu.hammercore.common.utils.BigIntegerUtils;
+import com.pengu.hammercore.common.utils.ItemStackUtil;
+import com.pengu.hammercore.net.utils.NetPropertyBool;
+import com.pengu.hammercore.tile.TileSyncableTickable;
+import com.pengu.hammercore.tile.tooltip.iTooltipTile;
+import com.pengu.holestorage.InfoBHS;
+import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
+import com.pengu.holestorage.api.atomictransformer.SimpleTransformerRecipe;
+import com.pengu.holestorage.gui.inv.ContainerAtomicTransformer;
+import com.pengu.holestorage.gui.ui.GuiAtomicTransformer;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 
-import com.pengu.hammercore.common.InterItemStack;
-import com.pengu.hammercore.common.inventory.IInventoryListener;
-import com.pengu.hammercore.common.inventory.InventoryNonTile;
-import com.pengu.hammercore.common.utils.BigIntegerUtils;
-import com.pengu.hammercore.common.utils.ItemStackUtil;
-import com.pengu.hammercore.tile.TileSyncableTickable;
-import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
-import com.pengu.holestorage.api.atomictransformer.SimpleTransformerRecipe;
-import com.pengu.holestorage.gui.inv.ContainerAtomicTransformer;
-import com.pengu.holestorage.gui.ui.GuiAtomicTransformer;
-
-public class TileAtomicTransformer extends TileSyncableTickable implements IEnergyStorage, ISidedInventory, IInventoryListener
+public class TileAtomicTransformer extends TileSyncableTickable implements IEnergyStorage, ISidedInventory, iInventoryListener, iTooltipTile
 {
 	public BigInteger stored = BigInteger.ZERO;
 	public InventoryNonTile inventory = new InventoryNonTile(2);
@@ -319,5 +326,28 @@ public class TileAtomicTransformer extends TileSyncableTickable implements IEner
 	public Object getServerGuiElement(EntityPlayer player)
 	{
 		return new ContainerAtomicTransformer(this, player.inventory);
+	}
+	
+	public static final DecimalFormat format = new DecimalFormat("#0,00");
+	
+	@Override
+	public void getTextTooltip(List<String> list, EntityPlayer player)
+	{
+		if(recipe != null)
+		{
+			list.add(I18n.translateToLocal("gui." + InfoBHS.MOD_ID + ":rf.required") + ": " + String.format("%,d", recipe.getEnergyUsed(inventory.getStackInSlot(0))) + " RF");
+			list.add(I18n.translateToLocal("gui." + InfoBHS.MOD_ID + ":rf.stored") + ": " + String.format("%,d", stored) + " RF");
+			list.add(I18n.translateToLocal("gui." + InfoBHS.MOD_ID + ":input") + ": " + recipe.getInputItemCount() + "x " + getStackInSlot(0).getDisplayName());
+			list.add(I18n.translateToLocal("gui." + InfoBHS.MOD_ID + ":output") + ": " + recipe.getOutputItem().getDisplayName());
+			
+			try
+			{
+				double progress = new BigDecimal(stored).divide(new BigDecimal(recipe.getEnergyUsed(inventory.getStackInSlot(0)))).doubleValue() * 100D;
+				
+				list.add(I18n.translateToLocal("gui." + InfoBHS.MOD_ID + ":progress") + ": " + format.format(progress * 100D) + "%");
+			} catch(Throwable err)
+			{
+			}
+		}
 	}
 }

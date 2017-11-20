@@ -10,7 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.blocks.BlockAtomicTransformer;
 import com.pengu.holestorage.blocks.BlockBlackHole;
 import com.pengu.holestorage.blocks.BlockBlackHoleFormer;

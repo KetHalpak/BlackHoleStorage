@@ -17,12 +17,12 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.tile.TileFluidEjector;
 
 public final class BlockFluidEjector extends Block implements ITileEntityProvider
 {
-	public static final PropertyEnum<EnumFacing> FACING = Info.FACING_UD;
+	public static final PropertyEnum<EnumFacing> FACING = InfoBHS.FACING_UD;
 	
 	public BlockFluidEjector()
 	{

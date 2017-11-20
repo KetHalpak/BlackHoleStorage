@@ -12,7 +12,7 @@ import net.minecraft.util.text.translation.I18n;
 import org.lwjgl.opengl.GL11;
 
 import com.pengu.hammercore.common.InterItemStack;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.api.atomictransformer.SimpleTransformerRecipe;
 
 public class AtomicTransformerWrapper implements IRecipeWrapper
@@ -31,8 +31,8 @@ public class AtomicTransformerWrapper implements IRecipeWrapper
 		GL11.glPushMatrix();
 		GL11.glTranslated(44, 9, 0);
 		GL11.glScaled(.5, .5, 1);
-		fontRendererObj.drawString(I18n.translateToLocal("gui." + Info.MOD_ID + ":rf.required") + ": " + String.format("%,d", recipe.getEnergyUsed(ItemStack.EMPTY)) + " RF", 0, 36, 0, false);
-		fontRendererObj.drawString(I18n.translateToLocal("gui." + Info.MOD_ID + ":output") + ": " + InterItemStack.getStackSize(recipe.getOutputItem()) + "x " + recipe.getOutputItem().getDisplayName(), 0, 54, 0, false);
+		fontRendererObj.drawString(I18n.translateToLocal("gui." + InfoBHS.MOD_ID + ":rf.required") + ": " + String.format("%,d", recipe.getEnergyUsed(ItemStack.EMPTY)) + " RF", 0, 36, 0, false);
+		fontRendererObj.drawString(I18n.translateToLocal("gui." + InfoBHS.MOD_ID + ":output") + ": " + InterItemStack.getStackSize(recipe.getOutputItem()) + "x " + recipe.getOutputItem().getDisplayName(), 0, 54, 0, false);
 		GL11.glPopMatrix();
 	}
 	

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.translation.I18n;
 
 import com.pengu.hammercore.client.utils.RenderUtil;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.intr.jei.BHSJEI;
 
 public class AtomicTransformerCategory implements IRecipeCategory<AtomicTransformerWrapper>
@@ -20,7 +20,7 @@ public class AtomicTransformerCategory implements IRecipeCategory<AtomicTransfor
 	
 	public AtomicTransformerCategory(IGuiHelper gui)
 	{
-		backgound = gui.createDrawable(new ResourceLocation(Info.MOD_ID, "textures/gui/atomic_transformer_jei.png"), 0, 0, 168, 72);
+		backgound = gui.createDrawable(new ResourceLocation(InfoBHS.MOD_ID, "textures/gui/atomic_transformer_jei.png"), 0, 0, 168, 72);
 	}
 	
 	@Override
@@ -45,7 +45,7 @@ public class AtomicTransformerCategory implements IRecipeCategory<AtomicTransfor
 	@Override
 	public String getTitle()
 	{
-		return I18n.translateToLocal("jei." + Info.MOD_ID + ":atomic_transformer");
+		return I18n.translateToLocal("jei." + InfoBHS.MOD_ID + ":atomic_transformer");
 	}
 	
 	@Override
@@ -69,6 +69,6 @@ public class AtomicTransformerCategory implements IRecipeCategory<AtomicTransfor
 	@Override
     public String getModName()
     {
-	    return Info.MOD_NAME;
+	    return InfoBHS.MOD_NAME;
     }
 }

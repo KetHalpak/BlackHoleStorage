@@ -16,7 +16,7 @@ import com.pengu.hammercore.HammerCore;
 import com.pengu.hammercore.math.MathHelper;
 import com.pengu.hammercore.tile.TileSyncableTickable;
 import com.pengu.holestorage.BlackHoleStorage;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.api.hole.BlackHolePacket.EnumBlackHolePacketType;
 import com.pengu.holestorage.api.hole.impl.BlackHoleStorageFluid;
 import com.pengu.holestorage.blocks.BlockFluidEjector;
@@ -56,7 +56,7 @@ public class TileFluidEjector extends TileSyncableTickable implements IFluidHand
 				
 				if(lastParticleSize != null && !world.isRemote && world.rand.nextInt(16) < 1)
 				{
-					boolean upsideDown = world.getBlockState(pos).getValue(Info.FACING_UD) == EnumFacing.DOWN;
+					boolean upsideDown = world.getBlockState(pos).getValue(InfoBHS.FACING_UD) == EnumFacing.DOWN;
 					
 					double fuzzMax = Math.sqrt(tile.eventHorizon) / 6D;
 					
@@ -84,7 +84,7 @@ public class TileFluidEjector extends TileSyncableTickable implements IFluidHand
 	{
 		if(isValidState())
 		{
-			EnumFacing rot = world.getBlockState(pos).getValue(Info.FACING_UD);
+			EnumFacing rot = world.getBlockState(pos).getValue(InfoBHS.FACING_UD);
 			if(scan == null || scan.getDistance(pos.getX(), pos.getY(), pos.getZ()) >= 32D)
 				scan = pos.offset(rot);
 			else

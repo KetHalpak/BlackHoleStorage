@@ -7,7 +7,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.client.IModGuiFactory;
 
 import com.pengu.hammercore.cfg.gui.HCConfigGui;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 
 public class BHSConfigFactory implements IModGuiFactory
 {
@@ -25,7 +25,7 @@ public class BHSConfigFactory implements IModGuiFactory
 	@Override
 	public GuiScreen createConfigGui(GuiScreen parentScreen)
 	{
-		return new HCConfigGui(parentScreen, BHSConfigs.cfgs, Info.MOD_ID);
+		return new HCConfigGui(parentScreen, BHSConfigs.cfgs, InfoBHS.MOD_ID);
 	}
 	
 	@Override

@@ -2,12 +2,15 @@ package com.pengu.holestorage.tile;
 
 import java.awt.Color;
 import java.math.BigInteger;
+import java.util.List;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
@@ -15,12 +18,14 @@ import net.minecraftforge.energy.IEnergyStorage;
 import com.pengu.hammercore.HammerCore;
 import com.pengu.hammercore.common.utils.BigIntegerUtils;
 import com.pengu.hammercore.tile.TileSyncableTickable;
+import com.pengu.hammercore.tile.tooltip.iTooltipTile;
 import com.pengu.holestorage.BlackHoleStorage;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.api.hole.BlackHolePacket.EnumBlackHolePacketType;
 import com.pengu.holestorage.api.hole.impl.BlackHoleStorageRF;
 import com.pengu.holestorage.blocks.BlockRFEjector;
 
-public class TileRFEjector extends TileSyncableTickable implements IEnergyStorage
+public class TileRFEjector extends TileSyncableTickable implements IEnergyStorage, iTooltipTile
 {
 	public BlockPos scan;
 	private int lastParticleSize = 0;
@@ -218,5 +223,12 @@ public class TileRFEjector extends TileSyncableTickable implements IEnergyStorag
 		if(capability == CapabilityEnergy.ENERGY)
 			return (T) this;
 		return super.getCapability(capability, facing);
+	}
+
+	@Override
+	public void getTextTooltip(List<String> list, EntityPlayer player)
+	{
+		list.add(I18n.translateToLocal("gui." + InfoBHS.MOD_ID + ":rf.stored") + ":");
+		list.add(rfStored + " RF");
 	}
 }

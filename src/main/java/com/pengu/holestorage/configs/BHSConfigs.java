@@ -3,19 +3,19 @@ package com.pengu.holestorage.configs;
 import java.io.File;
 import java.math.BigDecimal;
 
-import net.minecraftforge.common.config.Configuration;
-
 import com.pengu.hammercore.cfg.HCModConfigurations;
-import com.pengu.hammercore.cfg.IConfigReloadListener;
+import com.pengu.hammercore.cfg.iConfigReloadListener;
 import com.pengu.hammercore.cfg.fields.ModConfigPropertyBool;
 import com.pengu.hammercore.cfg.fields.ModConfigPropertyFloat;
 import com.pengu.hammercore.cfg.fields.ModConfigPropertyInt;
 import com.pengu.holestorage.BlackHoleStorage;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.tile.TileBlackHoleFormer;
 
-@HCModConfigurations(modid = Info.MOD_ID)
-public class BHSConfigs implements IConfigReloadListener
+import net.minecraftforge.common.config.Configuration;
+
+@HCModConfigurations(modid = InfoBHS.MOD_ID)
+public class BHSConfigs implements iConfigReloadListener
 {
 	public static Configuration cfgs;
 	
@@ -44,6 +44,6 @@ public class BHSConfigs implements IConfigReloadListener
 	@Override
 	public File getSuggestedConfigurationFile()
 	{
-	    return new File(BlackHoleStorage.cfgFolder, "main.cfg");
+		return new File(BlackHoleStorage.cfgFolder, "main.cfg");
 	}
 }

@@ -54,16 +54,11 @@ public class TileBlackHoleStabilizer extends TileSyncableTickable implements IEn
 				
 				if(storage.getEnergyStored() >= storage.getMaxExtract())
 				{
-					// HammerCore.particleProxy.spawnZap(world, new
-					// Vec3d(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5),
-					// new Vec3d(scan.getX() + .5, scan.getY() + .5, scan.getZ()
-					// + .5), Color.RED);
-					
 					int red = 0;
-					int green = 254 + world.rand.nextInt(2);
-					int blue = 254 + world.rand.nextInt(2);
+					int green = 250 + world.rand.nextInt(6);
+					int blue = 250 + world.rand.nextInt(6);
 					
-					BlackHoleStorage.proxy.spawnLiquidFX(world, pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5, scan.getX() + .5, scan.getY() + .5, scan.getZ() + .5, 200, (red << 16) | (green << 8) | blue, .1F, 3);
+					BlackHoleStorage.proxy.spawnLiquidFX(world, pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5, scan.getX() + .5, scan.getY() + .4, scan.getZ() + .5, 200, (red << 16) | (green << 8) | blue, .02F, 100);
 				} else
 					HammerCore.particleProxy.spawnZap(world, new Vec3d(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5), new Vec3d(pos.offset(rot).getX() + .5, pos.offset(rot).getY() + .5, pos.offset(rot).getZ() + .5), Color.BLUE.getRGB());
 			}

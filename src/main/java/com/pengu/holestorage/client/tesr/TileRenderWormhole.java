@@ -24,7 +24,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.pengu.hammercore.HammerCore;
 import com.pengu.hammercore.client.render.tesr.TESR;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.client.entity.EntityWormhole;
 import com.pengu.holestorage.configs.BHSConfigs;
 import com.pengu.holestorage.init.BlocksBHS;
@@ -33,7 +33,7 @@ import com.pengu.holestorage.tile.TileWormhole;
 
 public class TileRenderWormhole extends TESR<TileWormhole>
 {
-	private static final ResourceLocation wormhole = new ResourceLocation(Info.MOD_ID, "textures/wormhole.png");
+	private static final ResourceLocation wormhole = new ResourceLocation(InfoBHS.MOD_ID, "textures/wormhole.png");
 	private final EnumFacing[] side = new EnumFacing[1];
 	
 	private static Minecraft mc = Minecraft.getMinecraft();
@@ -50,7 +50,7 @@ public class TileRenderWormhole extends TESR<TileWormhole>
 		IBlockState state = te.getWorld().getBlockState(te.getPos());
 		if(state.getBlock() == BlocksBHS.WORMHOLE)
 		{
-			side[0] = state.getValue(Info.FACING_UDEWSN);
+			side[0] = state.getValue(InfoBHS.FACING_UDEWSN);
 			GL11.glPushMatrix();
 			GL11.glTranslated(x, y, z);
 			
@@ -72,7 +72,7 @@ public class TileRenderWormhole extends TESR<TileWormhole>
 			GL11.glPopMatrix();
 		}
 		
-		// disable seethrought via seethrought
+		// disable see-through via see-through
 		if(TileEntityRendererDispatcher.instance.entity instanceof EntityWormhole)
 			return;
 		
@@ -95,7 +95,7 @@ public class TileRenderWormhole extends TESR<TileWormhole>
 		
 		wormhole.rendering = true;
 		
-		EnumFacing facing = te.getWorld().getBlockState(te.getPos()).getValue(Info.FACING_UDEWSN).getOpposite();
+		EnumFacing facing = te.getWorld().getBlockState(te.getPos()).getValue(InfoBHS.FACING_UDEWSN).getOpposite();
 		GlStateManager.pushMatrix();
 		if(registerWormholes.get(wormhole) != null)
 		{
@@ -115,6 +115,15 @@ public class TileRenderWormhole extends TESR<TileWormhole>
 				GlStateManager.translate(.5, .5, 0);
 				GlStateManager.rotate(-90, 1, 0, 0);
 			}
+			
+			if(side[0] == EnumFacing.NORTH)
+				GL11.glTranslated(-.5, 0, -.5);
+			if(side[0] == EnumFacing.SOUTH)
+				GL11.glTranslated(.5, 0, .5);
+			if(side[0] == EnumFacing.WEST)
+				GL11.glTranslated(.5, 0, -.5);
+			if(side[0] == EnumFacing.EAST)
+				GL11.glTranslated(-.5, 0, .5);
 			
 			GlStateManager.translate(-0.41F, .09F, -0.391F);
 			GlStateManager.scale(.819, .819, 1);

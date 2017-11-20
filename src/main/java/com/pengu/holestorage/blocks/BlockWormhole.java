@@ -22,7 +22,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import com.pengu.hammercore.common.InterItemStack;
-import com.pengu.holestorage.Info;
+import com.pengu.holestorage.InfoBHS;
 import com.pengu.holestorage.init.ItemsBHS;
 import com.pengu.holestorage.tile.TileWormhole;
 
@@ -115,17 +115,17 @@ public class BlockWormhole extends Block implements ITileEntityProvider
 	
 	public IBlockState getStateFromMeta(int meta)
 	{
-		return getDefaultState().withProperty(Info.FACING_UDEWSN, EnumFacing.values()[meta]);
+		return getDefaultState().withProperty(InfoBHS.FACING_UDEWSN, EnumFacing.values()[meta]);
 	}
 	
 	public int getMetaFromState(IBlockState state)
 	{
-		return state.getValue(Info.FACING_UDEWSN).ordinal();
+		return state.getValue(InfoBHS.FACING_UDEWSN).ordinal();
 	}
 	
 	protected BlockStateContainer createBlockState()
 	{
-		return new BlockStateContainer(this, Info.FACING_UDEWSN);
+		return new BlockStateContainer(this, InfoBHS.FACING_UDEWSN);
 	}
 	
 	@Override
@@ -141,7 +141,7 @@ public class BlockWormhole extends Block implements ITileEntityProvider
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	{
-		EnumFacing rot = state.getValue(Info.FACING_UDEWSN);
+		EnumFacing rot = state.getValue(InfoBHS.FACING_UDEWSN);
 		
 		if(rot == EnumFacing.UP)
 			return UP_BB;

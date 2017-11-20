@@ -1,14 +1,11 @@
 package com.pengu.holestorage.init;
 
+import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-
-import com.pengu.hammercore.init.SimpleRegistration;
-import com.pengu.holestorage.api.atomictransformer.AtomicTransformerRecipes;
 
 public class RecipesBHS
 {

@@ -2,8 +2,9 @@ package com.pengu.holestorage;
 
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
 
-public class Info
+public class InfoBHS
 {
 	public static final String MOD_ID = "blackholestorage", MOD_NAME = "Black Hole Storage", MOD_VERSION = "@VERSION@";
 	
@@ -11,4 +12,9 @@ public class Info
 	
 	public static final PropertyEnum<EnumFacing> FACING_UD = PropertyEnum.create("facing", EnumFacing.class, EnumFacing.UP, EnumFacing.DOWN);
 	public static final PropertyEnum<EnumFacing> FACING_UDEWSN = PropertyEnum.create("facing", EnumFacing.class);
+	
+	public static ResourceLocation texture(String p)
+	{
+		return new ResourceLocation(MOD_ID, "textures/" + p);
+	}
 }

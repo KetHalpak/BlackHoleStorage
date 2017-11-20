@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "custom": { "flip-v": true },
-    "model": "blackholestorage:anti_matter_electron3.obj",
+    "model": "blackholestorage:anti_matter_positron_3.obj",
     "textures": {}
   },
   "variants": {

@@ -58,7 +58,11 @@ public class BlackHoleVortex extends Vortex
 			double py = ParticleProxy_Client.getParticlePosY(p);
 			double pz = ParticleProxy_Client.getParticlePosZ(p);
 			
+			double distSq = (tile.getPos().getX() - px + .5) * (tile.getPos().getX() - px + .5) + (tile.getPos().getY() - py + .5) * (tile.getPos().getY() - py + .5) + (tile.getPos().getZ() - pz + .5) * (tile.getPos().getZ() - pz + .5);
 			double div = isSlower ? 128D : 32D;
+			
+			div /= Math.sqrt(distSq);
+			
 			mx += MathHelper.clip((x - px), -1, 1) / div;
 			my += MathHelper.clip((y - py), -1, 1) / div;
 			mz += MathHelper.clip((z - pz), -1, 1) / div;
@@ -67,8 +71,7 @@ public class BlackHoleVortex extends Vortex
 			ParticleProxy_Client.setParticleMotionY(p, my);
 			ParticleProxy_Client.setParticleMotionZ(p, mz);
 			
-			double distSq = (tile.getPos().getX() - px + .5) * (tile.getPos().getX() - px + .5) + (tile.getPos().getY() - py + .5) * (tile.getPos().getY() - py + .5) + (tile.getPos().getZ() - pz + .5) * (tile.getPos().getZ() - pz + .5);
-			if(distSq < Math.sqrt(tile.additionalMass) + Math.sqrt(tile.additionalMass) - 8)
+			if(distSq < Math.sqrt(tile.additionalMass) * 2 + .05)
 				p.setExpired();
 		}
 	}

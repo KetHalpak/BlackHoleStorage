@@ -2,24 +2,22 @@ package com.pengu.holestorage.client.particle;
 
 import org.lwjgl.opengl.GL11;
 
+import com.pengu.hammercore.client.particle.api.SimpleParticle;
+import com.pengu.hammercore.proxy.ParticleProxy_Client;
+import com.pengu.holestorage.InfoBHS;
+
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.renderer.vertex.VertexBuffer;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import com.pengu.hammercore.client.particle.api.SimpleParticle;
-import com.pengu.holestorage.Info;
-
 public class ParticleEnergyFX extends SimpleParticle
 {
-	public ResourceLocation texture = new ResourceLocation(Info.MOD_ID, "textures/particles/energy.png");
+	public ResourceLocation texture = new ResourceLocation(InfoBHS.MOD_ID, "textures/particles/energy.png");
 	
 	private double targetX, targetY, targetZ;
 	private double omx, omy, omz;
@@ -47,7 +45,7 @@ public class ParticleEnergyFX extends SimpleParticle
 			return this;
 		if(Minecraft.getMinecraft().player.getDistanceSq(posX, posY, posZ) >= 4096D)
 			return this;
-		Minecraft.getMinecraft().effectRenderer.addEffect(this);
+		ParticleProxy_Client.queueParticleSpawn(this);
 		return this;
 	}
 	
@@ -69,10 +67,10 @@ public class ParticleEnergyFX extends SimpleParticle
 	{
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		
-		float f = (float) particleTextureIndexX / 16.0F;
-		float f1 = f + 0.0624375F;
-		float f2 = (float) particleTextureIndexY / 16.0F;
-		float f3 = f2 + 0.0624375F;
+		float f = 0;
+		float f1 = 1;
+		float f2 = 0;
+		float f3 = 1;
 		float f4 = 0.1F * particleScale;
 		
 		if(particleTexture != null)
@@ -82,11 +80,6 @@ public class ParticleEnergyFX extends SimpleParticle
 			f2 = particleTexture.getMinV();
 			f3 = particleTexture.getMaxV();
 		}
-		
-		f = 0;
-		f1 = 1;
-		f2 = 0;
-		f3 = 1;
 		
 		float f5 = (float) (prevPosX + (posX - prevPosX) * (double) partialTicks - interpPosX);
 		float f6 = (float) (prevPosY + (posY - prevPosY) * (double) partialTicks - interpPosY);
