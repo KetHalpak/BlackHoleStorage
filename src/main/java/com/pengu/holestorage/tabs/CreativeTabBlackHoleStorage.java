@@ -10,7 +10,7 @@ public class CreativeTabBlackHoleStorage extends CreativeTabs
 {
 	public static final CreativeTabBlackHoleStorage BLACK_HOLE_STORAGE = new CreativeTabBlackHoleStorage();
 	
-	public ItemStack icon = new ItemStack(BlocksBHS.BLACK_HOLE_STABILIZER);
+	public ItemStack icon = new ItemStack(BlocksBHS.BLACK_HOLE_CHARGER);
 	
 	private CreativeTabBlackHoleStorage()
 	{
@@ -20,6 +20,6 @@ public class CreativeTabBlackHoleStorage extends CreativeTabs
 	@Override
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(BlocksBHS.BLACK_HOLE_STABILIZER);
+		return new ItemStack(BlocksBHS.BLACK_HOLE_CHARGER);
 	}
 }

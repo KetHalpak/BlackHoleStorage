@@ -19,12 +19,12 @@ import net.minecraft.world.World;
 import com.pengu.hammercore.common.EnumRotation;
 import com.pengu.holestorage.tile.TileBlackHoleStabilizer;
 
-public class BlockBlackHoleStabilizer extends Block implements ITileEntityProvider
+public class BlockBlackHoleCharger extends Block implements ITileEntityProvider
 {
-	public BlockBlackHoleStabilizer()
+	public BlockBlackHoleCharger()
 	{
 		super(Material.IRON);
-		setUnlocalizedName("black_hole_stabilizer");
+		setUnlocalizedName("black_hole_charger");
 		setHardness(4);
 		setHarvestLevel("pickaxe", 2);
 	}

@@ -20,7 +20,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 3
-map_Kd blackholestorage:blocks/rfinjector_sphere
+map_Kd blackholestorage:blocks/stabilized_electrical_diamond_block
 
 newmtl Torus1
 Ns 96.078431

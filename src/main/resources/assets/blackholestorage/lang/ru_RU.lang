@@ -14,16 +14,16 @@ tile.blackholestorage:black_hole.tooltip0=Выглядит неполучаем�
 tile.blackholestorage:black_hole_former.name=Формировщик черной дыры
 tile.blackholestorage:black_hole_former.tooltip0=Адронный Коллайдер сошел с ума!
 
-tile.blackholestorage:black_hole_stabilizer.name=Стабилизатор черной дыры
+tile.blackholestorage:black_hole_stabilizer.name=Заряжатель черной дыры
 tile.blackholestorage:black_hole_stabilizer.tooltip0=Установите 4 стабилизатора направленных на черную дыру
 tile.blackholestorage:black_hole_stabilizer.tooltip1=И подайте электричество с противоположной стороны, чтобы использовать
 tile.blackholestorage:black_hole_stabilizer.tooltip2=Вашу черную дыру без катастроф
 tile.blackholestorage:black_hole_stabilizer.tooltip3=Использует 100 RF/t пока активен.
 
-tile.blackholestorage:fluid_ejector.name=Выталкиватель: Жидкость
-tile.blackholestorage:fluid_injector.name=Вводитель: Жидкость
-tile.blackholestorage:rf_ejector.name=Выталкиватель: RF
-tile.blackholestorage:rf_injector.name=Выталкиватель: RF
+tile.blackholestorage:fluid_ejector.name=Жидкостный Производитель
+tile.blackholestorage:fluid_injector.name=Жидкостный Поглотитель
+tile.blackholestorage:rf_ejector.name=RF Производитель
+tile.blackholestorage:rf_injector.name=RF Поглотитель
 tile.blackholestorage:atomic_transformer.name=Атомический трансформатор
 
 tile.blackholestorage:wormhole_former.name=Формировщик червоточины
@@ -67,3 +67,46 @@ gui.blackholestorage:progress=Прогресс
 ###DEATHS###
 death.attack.blackholestorage:black_hole=%s пересек Горизонт Событий
 ############
+
+##MANUAL##
+hc.manual_name.bh.intro=Интро
+hc.manual_text.bh.intro=Об Black Hole Storage
+bhs.manual_desc.intro=Мод Black Hole Storage о тайных местах, точках нашей вселенной. Данный мод позволяет игроку создать и использовать черные дыры. Если бы дыра была природного характера, она-бы "напакастила" гораздо больше "ручной". Внимание: Данный мод расчитан на end-game, ибо он требует миллиарды RF что бы испольовать, так что советуем взглянуть на Solar Flux Reborn, от того же автора, что и Black Hole Storage. Что бы начать развитие с модом, создайте Атомический трансформатор.
+
+hc.manual_name.bh.atomic_transformer=Атомический трансформатор
+hc.manual_text.bh.atomic_transformer=Пересобираем атомически!
+bhs.manual_desc.atomic_transformer=(Еще не переведено) Atomic Transformer is your first step towards compressing space in a tiny size. Using this machine you can transform some items into others using RF.
+
+hc.manual_name.bh.anti_matter=Анти-материя
+hc.manual_text.bh.anti_matter=Почему она не взрывается?
+bhs.manual_desc.anti_matter=(Еще не переведено) Anti Matter is really expensive. Basically you need 8 billion RF to create one atom of this dangerous material. Anti Matter is capable of destructing Black Hole or close link between two points in space. Note that in order to destroy Black Hole you need it to be unstable and throw Anti Matter into it. The results are explosive. Actually, no, it's more than explosive!
+
+hc.manual_name.bh.black_hole=Черная Дыра
+hc.manual_text.bh.black_hole=Предмет входит, и, ну, не возвращается!
+bhs.manual_desc.black_hole.1=(Еще не переведено) Hand made black hole isn't as dangerous, but it still owns a big mass and keeping it under a shield is a very smart thing to do. Black Holes have a 1 million shield capacity and depending on the mass of black hole the shield will get damaged more, thus needing more power. To charge it's shield you need black hole chargers.
+bhs.manual_desc.black_hole.2=<IMG>blackholestorage:textures/gui/black_hole.png:0:0:214:120:0.65</IMG>
+
+hc.manual_name.bh.black_hole_former=Формировщик черной дыры
+hc.manual_text.bh.black_hole_former=Да настанет конец мира!
+bhs.manual_desc.black_hole_former=(Еще не переведено) Black Hole Former is used to form a black hole. It requires 32,000,000,000 RF to make a black hole. Note: Black Hole Former will get destroyed and Black Hole will form on top of Black Hole Former (y + 1). See the actual former recipe on next page...
+
+hc.manual_name.bh.black_hole_charger=Заряжатель черной дыры
+hc.manual_text.bh.black_hole_charger=Предотвращаем непредвиденные ситуации
+bhs.manual_desc.black_hole_charger=(Еще не переведено) Black Hole Charger is required to charge Black Hole's shield. You can place up to 4 of this blocks. Each charger consumes up to 1000 RF/tick to recover black hole's shield. It can be placed up to 32 blocks away from Black Hole. The red tip of the charger must point on a black hole, as said with a maximal of 32 blocks away.
+
+hc.manual_name.bh.rf_injector=RF Поглотитель
+hc.manual_text.bh.rf_injector=Храним RF
+bhs.manual_desc.rf_injector=(Еще не переведено) RF Injector allows you to actually store the energy inside of a Black Hole. Note: if you had fluids or other type of storage in the black hole, you must clear it using that type's ejector. You can see how to place it on the next page.
+
+hc.manual_name.bh.rf_ejector=RF Производитель
+hc.manual_text.bh.rf_ejector=Возвращаем RF назад
+bhs.manual_desc.rf_ejector=(Еще не переведено) RF Ejector allows you to actually use the energy from a Black Hole. Note: if you had fluids or other type of storage in the black hole, ejector won't do anything. You can see how to place it on the next page.
+
+hc.manual_name.bh.fluid_injector=Жидкостный Поглотитель
+hc.manual_text.bh.fluid_injector=Храним жидкости
+bhs.manual_desc.fluid_injector=(Еще не переведено) Fluid Injector allows you to actually store the fluids inside of a Black Hole. Note: if you had other types of fluids fluids, energy or other type of storage in the black hole, you must clear it using that type's ejector (fluid ejector for other fluids). You can see how to place it on the next page.
+
+hc.manual_name.bh.fluid_ejector=Жидкостный Производитель
+hc.manual_text.bh.fluid_ejector=Возвращаем жидкости назад
+bhs.manual_desc.fluid_ejector=(Еще не переведено) Fluid Ejector allows you to actually use the fluids from a Black Hole. Note: if you had other fluids, energy or other type of storage in the black hole, ejector won't do anything. You can see how to place it on the next page.
+##########

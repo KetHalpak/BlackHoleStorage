@@ -1,0 +1,16 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"custom": { "flip-v": true },
+		"model": "blackholestorage:black_hole_charger.obj",
+		"y": 270
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": [{ "transform": "forge:default-block" }],
+		"facing=north": { "model": "blackholestorage:black_hole_charger.obj", "custom": { "flip-v": true }, "y": 270 },
+		"facing=south": { "model": "blackholestorage:black_hole_charger.obj", "custom": { "flip-v": true }, "y": 90 },
+		"facing=west":  { "model": "blackholestorage:black_hole_charger.obj", "custom": { "flip-v": true }, "y": 180 },
+		"facing=east":  { "model": "blackholestorage:black_hole_charger.obj", "custom": { "flip-v": true }, "y": 0 }
+	}
+}

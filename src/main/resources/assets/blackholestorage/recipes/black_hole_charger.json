@@ -1,14 +1,14 @@
 {
     "conditions": [{
         "type": "minecraft:item_exists",
-        "item": "blackholestorage:black_hole_stabilizer"
+        "item": "blackholestorage:black_hole_charger"
     }],
     "type": "forge:ore_shaped",
     "pattern": [ "od", "or", "od" ],
     "key": {
 		"o": { "ore": "obsidian", "type": "forge:ore_dict" },
-		"d": { "ore": "blockDiamond", "type": "forge:ore_dict" },
+		"d": { "item": "blackholestorage:stabilized_electrical_diamond" },
 		"r": { "ore": "blockRedstone", "type": "forge:ore_dict" }
     },
-    "result": { "item": "blackholestorage:black_hole_stabilizer" }
+    "result": { "item": "blackholestorage:black_hole_charger" }
 }

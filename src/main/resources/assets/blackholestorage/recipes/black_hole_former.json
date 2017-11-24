@@ -7,7 +7,7 @@
     "pattern": [ "sss", "drd", "iii" ],
     "key": {
 		"i": { "ore": "ingotIron", "type": "forge:ore_dict" },
-		"d": { "ore": "gemDiamond", "type": "forge:ore_dict" },
+		"d": { "item": "blackholestorage:stabilized_electrical_diamond" },
 		"s": { "ore": "dustRedstone", "type": "forge:ore_dict" },
 		"r": { "item": "blackholestorage:former_ring" }
     },

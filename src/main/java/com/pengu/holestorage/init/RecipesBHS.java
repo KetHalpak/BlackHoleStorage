@@ -27,5 +27,6 @@ public class RecipesBHS
 		AtomicTransformerRecipes.register("gemLapis", new ItemStack(Blocks.LAPIS_BLOCK), 500000L);
 		AtomicTransformerRecipes.register(new ItemStack(Blocks.QUARTZ_BLOCK), new ItemStack(Items.QUARTZ, 5), 50000L);
 		AtomicTransformerRecipes.register("matterDark", new ItemStack(ItemsBHS.ANTI_MATTER), 8_000_000_000L);
+		AtomicTransformerRecipes.register(new ItemStack(ItemsBHS.DESTABILIZED_DIAMOND), new ItemStack(ItemsBHS.STABILIZED_ELECTRICAL_DIAMOND), 1_000_000L);
 	}
 }

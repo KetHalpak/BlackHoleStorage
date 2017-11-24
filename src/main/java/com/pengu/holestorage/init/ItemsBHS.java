@@ -16,5 +16,7 @@ public class ItemsBHS
 	        ANTI_MATTER_CORE = new ItemUnobtainable("anti_matter_core"), //
 	        ANTI_MATTER_POSITRON_1 = new ItemUnobtainable("anti_matter_positron_1"), //
 	        ANTI_MATTER_POSITRON_2 = new ItemUnobtainable("anti_matter_positron_2"), //
-	        ANTI_MATTER_POSITRON_3 = new ItemUnobtainable("anti_matter_positron_3");
+	        ANTI_MATTER_POSITRON_3 = new ItemUnobtainable("anti_matter_positron_3"), //
+	        DESTABILIZED_DIAMOND = new Item().setUnlocalizedName("destabilized_diamond"), //
+	        STABILIZED_ELECTRICAL_DIAMOND = new Item().setUnlocalizedName("stabilized_electrical_diamond");
 }

@@ -7,7 +7,7 @@
     "pattern": [ "ro ", "rdo", "ro " ],
     "key": {
 		"o": { "ore": "obsidian", "type": "forge:ore_dict" },
-		"d": { "ore": "blockDiamond", "type": "forge:ore_dict" },
+		"d": { "item": "blackholestorage:stabilized_electrical_diamond" },
 		"r": { "ore": "blockRedstone", "type": "forge:ore_dict" }
     },
     "result": { "item": "blackholestorage:rf_injector" }

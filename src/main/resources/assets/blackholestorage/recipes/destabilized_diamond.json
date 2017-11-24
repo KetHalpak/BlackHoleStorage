@@ -1,0 +1,15 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "blackholestorage:destabilized_diamond"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "rgr", "ede", "rgr" ],
+    "key": {
+		"r": { "ore": "dustRedstone", "type": "forge:ore_dict" },
+		"g": { "ore": "nuggetGold", "type": "forge:ore_dict" },
+		"d": { "ore": "gemDiamond", "type": "forge:ore_dict" },
+		"e": { "ore": "enderpearl", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "blackholestorage:destabilized_diamond" }
+}

@@ -16,7 +16,7 @@ import com.pengu.hammercore.common.EnumRotation;
 import com.pengu.hammercore.common.capabilities.FEEnergyStorage;
 import com.pengu.hammercore.tile.TileSyncableTickable;
 import com.pengu.holestorage.BlackHoleStorage;
-import com.pengu.holestorage.blocks.BlockBlackHoleStabilizer;
+import com.pengu.holestorage.blocks.BlockBlackHoleCharger;
 
 public class TileBlackHoleStabilizer extends TileSyncableTickable implements IEnergyStorage
 {
@@ -50,7 +50,7 @@ public class TileBlackHoleStabilizer extends TileSyncableTickable implements IEn
 			
 			if(ticksExisted % 20 == 0 && !world.isRemote && isBlackHoleFound())
 			{
-				EnumFacing rot = BlockBlackHoleStabilizer.convert((EnumRotation) world.getBlockState(pos).getValue(EnumRotation.FACING));
+				EnumFacing rot = BlockBlackHoleCharger.convert((EnumRotation) world.getBlockState(pos).getValue(EnumRotation.FACING));
 				
 				if(storage.getEnergyStored() >= storage.getMaxExtract())
 				{
@@ -72,7 +72,7 @@ public class TileBlackHoleStabilizer extends TileSyncableTickable implements IEn
 	
 	public void nextPos()
 	{
-		EnumFacing rot = BlockBlackHoleStabilizer.convert((EnumRotation) world.getBlockState(pos).getValue(EnumRotation.FACING));
+		EnumFacing rot = BlockBlackHoleCharger.convert((EnumRotation) world.getBlockState(pos).getValue(EnumRotation.FACING));
 		if(scan == null || scan.getDistance(pos.getX(), pos.getY(), pos.getZ()) >= 32D)
 			scan = pos.offset(rot);
 		else

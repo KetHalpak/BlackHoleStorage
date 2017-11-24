@@ -1,6 +1,6 @@
-# Blender v2.78 (sub 0) OBJ File: 'black_hole_stabilizer.obj'
-# www.blender.org
-mtllib black_hole_stabilizer.mtl
+# Black Hole Charger
+
+mtllib black_hole_charger.mtl
 o Cube_Cube.001
 v 0.002437 1.000000 0.999492
 v 0.002437 0.000000 -0.000508
